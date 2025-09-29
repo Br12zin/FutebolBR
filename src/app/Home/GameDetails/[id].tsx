@@ -1,16 +1,16 @@
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { jogosMock } from '../../../data/JogosMock';
+import { jogosMock } from '../../data/JogosMock';
 
 export default function GameDetailsPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
   
   if (!id) return <Text>Jogo não encontrado</Text>;
 
-  const jogo = jogosMock.find(j => `${j.timeA}-${j.timeB}` === id);
+  const jogo = jogosMock.find(j => `${j.id}` === id);
 
-  if (!jogo) return <Text>Jogo não encontrado</Text>;
+  if (!jogo) return <Text>Jogo</Text>;
 
   return (
     <View style={styles.container}>

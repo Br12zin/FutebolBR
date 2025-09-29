@@ -1,15 +1,17 @@
-import { Link } from 'expo-router';
+// src/app/+html.tsx - Tela inicial estática
+import { router } from 'expo-router';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function WelcomeScreen() {
+  const onPressNextPage = () => {
+    router.push('/Home');
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>⚽ Placar Futebol BR</Text>
-      <Link href="/home" asChild>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onPressNextPage}>
           <Text style={styles.buttonText}>Ver Jogos</Text>
         </TouchableOpacity>
-      </Link>
     </View>
   );
 }

@@ -15,10 +15,7 @@ export default function HomePage() {
   }, []);
 
   const handlePressGame = (jogo: JogoFutebol) => {
-    router.push({
-      pathname: '/GameDetails/[id]',
-      params: { id: `${jogo.timeA}-${jogo.timeB}` }
-    });
+    router.push(`./GameDetails/[id]/${jogo.id}`);
   };
 
   return (

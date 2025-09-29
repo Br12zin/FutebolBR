@@ -2,6 +2,7 @@ import EventoEsportivo from "./EventoEsportivo";
 
 
 export class JogoFutebol extends EventoEsportivo {
+  id: number;
   timeA: string;
   timeB: string;
   placarA: number;
@@ -11,6 +12,7 @@ export class JogoFutebol extends EventoEsportivo {
   comentario?: string;
 
   constructor(
+    id: number,
     timeA: string,
     timeB: string,
     placarA: number,
@@ -20,6 +22,7 @@ export class JogoFutebol extends EventoEsportivo {
     comentario?: string
   ) {
     super();
+    this.id = id;
     this.timeA = timeA;
     this.timeB = timeB;
     this.placarA = placarA;

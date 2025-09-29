@@ -10,14 +10,14 @@ onPressGame?: (jogo: JogoFutebol) => void;
 };
 
 
-const GameList: React.FC<GameListProps> = ({ jogos, onPressGame }) => {
+const GameList: React.FC<GameListProps> = ({ jogos }) => {
 const renderItem: ListRenderItem<JogoFutebol> = ({ item }) => (
 <ScoreCard
+id={item.id?.toString()}
 timeA={item.timeA}
 timeB={item.timeB}
 placarA={item.placarA}
 placarB={item.placarB}
-onPress={() => onPressGame && onPressGame(item)}
 />
 );
 

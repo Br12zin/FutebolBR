@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   const handlePressGame = (jogo: JogoFutebol) => {
-    router.push(`/GameDetails/${jogo.timeA}-${jogo.timeB}`);
+    router.push(`./GameDetails/[id]/${jogo.id}`);
   };
 
   return (

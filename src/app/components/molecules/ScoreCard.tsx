@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import TeamLogo from '../atoms/TeamLogo';
@@ -5,17 +6,17 @@ import styles from './ScoreCard.styles';
 
 
 type ScoreCardProps = {
+id?: string;
 timeA: string;
 timeB: string;
 placarA: number;
 placarB: number;
-onPress?: () => void;
 };
 
 
-const ScoreCard: React.FC<ScoreCardProps> = ({ timeA, timeB, placarA, placarB, onPress }) => {
+const ScoreCard: React.FC<ScoreCardProps> = ({id, timeA, timeB, placarA, placarB }) => {
 return (
-<TouchableOpacity style={styles.container} onPress={onPress}>
+<TouchableOpacity style={styles.container} onPress={() => router.push(`/Home/GameDetails/${id}`)}>
 <View style={styles.teamContainer}>
 <TeamLogo teamName={timeA} />
 <Text style={styles.teamName}>{timeA}</Text>
