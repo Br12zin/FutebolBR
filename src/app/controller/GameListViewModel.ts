@@ -14,5 +14,4 @@ export class GameListViewModel {
     return this.jogos.filter(j => j.timeA === team || j.timeB === team);
   }
 
-  // Futuro: você pode adicionar filtros por data, placar, vencedor, etc.
 }

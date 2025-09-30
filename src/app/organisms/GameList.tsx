@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
-import { JogoFutebol } from '../../models/JogoFutebolBR';
+import { JogoFutebol } from '../models/JogoFutebolBR';
 import ScoreCard from '../molecules/ScoreCard';
 
 

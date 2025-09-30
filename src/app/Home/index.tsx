@@ -1,9 +1,9 @@
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import GameList from '../components/organisms/GameList';
 import { GameListViewModel } from '../controller/GameListViewModel';
 import { JogoFutebol } from '../models/JogoFutebolBR';
+import GameList from '../organisms/GameList';
 
 export default function HomePage() {
   const [games, setGames] = useState<JogoFutebol[]>([]);
@@ -13,6 +13,7 @@ export default function HomePage() {
   useEffect(() => {
     setGames(viewModel.getGames());
   }, []);
+  
 
   const handlePressGame = (jogo: JogoFutebol) => {
     router.push(`./GameDetails/[id]/${jogo.id}`);
